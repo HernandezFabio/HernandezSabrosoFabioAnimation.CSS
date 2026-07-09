@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>Turismo del Perú</title>
+<style>
+*{
+    padding: 0px;
+    margin: 0px;box-sizing:border-box;
+    box-sizing:border-box
+}
+
+body{
+    background-color: black;
+}
+.contenedor{
+    width: 800px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow:0 0 100px rgb(102, 255, 0);
+}
+.tarjeta1, .tarjeta2, .tarjeta3, .tarjeta4{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: -300px;
+    background-size: cover;
+
+}
+.tarjeta1{
+    background-image: url(img/tarjeta1.jpg);
+    left: 0px;
+    animation: tarjeta1 3s 1 forwards ;
+}
+.tarjeta2{
+    background-image: url(img/tarjeta2.jpg);
+    left: 200px;
+    top: -300px;
+    animation: tarjeta2 3s 1 forwards 3s;
+}
+.tarjeta3{
+    background-image: url(img/tarjeta3.jpg);
+    left: 400px;
+    top: -300px;
+    animation: tarjeta3 3s 1 forwards 6s;
+}
+.tarjeta4{
+    background-image: url(img/tarjeta4.jpg);
+    left: 600px;
+    top: -300px;
+    animation: tarjeta4 3s 1 forwards 9s;
+}
+
+/*Las Ricas Animaciones*/
+@keyframes tarjeta1{
+    0%{
+        top: -300px;
+        transform: rotateY(180deg);
+    }
+    50%{
+        top: 300px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+@keyframes tarjeta2{
+    0%{
+        top: -300px;
+        transform: rotateY(180deg);
+    }
+    50%{
+        top: 300px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+@keyframes tarjeta3{
+    0%{
+        top: -300px;
+        transform: rotateY(180deg);
+    }
+    50%{
+        top: 300px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+@keyframes tarjeta4{
+    0%{
+        top: -300px;
+        transform: rotateY(180deg);
+    }
+    50%{
+        top: 300px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+
+/*EVENTOS*/
+.tarjeta1:hover{
+    transition: 1s;
+    scale: 1.2;
+    z-index: 1;
+}
+.tarjeta2:hover{
+    transition: 1s;
+    scale: 1.2;
+    z-index: 1;
+}
+.tarjeta3:hover{
+    transition: 1s;
+    scale: 1.2;
+    z-index: 1;
+}
+.tarjeta4:hover{
+    transition: 1s;
+    scale: 1.2;
+    z-index: 1;
+}
+ .volver{
+    position:absolute;
+    top:25px;
+    left:25px;
+    text-decoration:none;
+    color:white;
+    background:#2563eb;
+    padding:12px 22px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.volver:hover{
+    background:#1d4ed8;
+    transform:scale(1.05);
+}
+</style>
+</head>
+<body>
+    <a href="index.html" class="volver"> Volver al Portafolio</a><br><br>
+<div class="contenedor">
+    <div class="tarjeta1"></div>
+    <div class="tarjeta2"></div>
+    <div class="tarjeta3"></div>
+    <div class="tarjeta4"></div>
+</div>
+</body>
+</html>

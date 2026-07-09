@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    background-color: black;
+}
+.contenedor{
+    width: 500px;
+    height: 800px;
+    border: 1px solid black;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    box-shadow:0 0 100px rgb(255, 208, 0);
+}
+.cielo{
+    position: absolute;
+    width: 500px;
+    height: 800px;
+    animation: cielo 30s 1 forwards;
+    z-index: 0;
+
+}
+@keyframes cielo {
+    from{
+        scale: 200%;
+    }
+    to{
+        scale: 100%;
+    }
+}
+.montaña{
+    position: absolute;
+    animation: montaña 20s 1 forwards;
+    width: 500px;
+    height: 400px;
+    top: 400px;
+    z-index: 1;
+}
+@keyframes montaña {
+    from{
+        scale: 100%;
+    }
+    to{
+        top: 100%;
+        transition: 1s;
+    }
+}
+.NOMBRE{
+    position: absolute;
+    width: 500px;
+    height: 600px;
+    top: 20%;
+    fill: white;
+    stroke-width: 0px;
+    z-index: 2; 
+    stroke-dashoffset: 0%;
+    animation: nombre 3s infinite alternate forwards;
+}
+
+@keyframes nombre{
+    from{   
+        stroke-width: 0px;
+        stroke-dasharray: 0%;
+    }
+    to{
+        stroke-width: 100PX;
+        stroke-dasharray: 150%;
+    }
+}
+svg path {
+    fill: transparent;
+    stroke: #ffffff;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: nombreAnimacion 4s ease-in-out 1 forwards;
+}
+
+@keyframes nombreAnimacion {
+    0%{
+        stroke-dashoffset: 50;
+    }
+    80%{
+        fill: transparent;
+    }
+    100%{
+        fill: #fff;
+        stroke-dashoffset: 0;
+    }
+    
+}
+ .volver{
+    position:absolute;
+    top:25px;
+    left:25px;
+    text-decoration:none;
+    color:white;
+    background:#2563eb;
+    padding:12px 22px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.volver:hover{
+    background:#1d4ed8;
+    transform:scale(1.05);
+}
+
