@@ -1,136 +1,135 @@
-<html>
+```html
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<title>CSS ANIMATION2</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis Proyectos de Animación Web</title>
 
 <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
 body{
-    margin: 1;
-    padding: 2;
-    background-color: rgb(126, 38, 38);
-    color: rgb(105, 247, 247);
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-}
-body
-{ background-color: rgb(54, 54, 54); }
-
-
-h1{     
-    font-size: 40px;
-    animation-name: texto;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    animation-delay: 4s;
-    color: rgba(139, 0, 0, 0); 
-    animation-fill-mode: forwards; 
+    background:linear-gradient(135deg,#001f4d,#003366,#0059b3);
+    min-height:100vh;
 }
 
-@keyframes texto{ 
-    from{ color: rgba(139, 0, 0, 0);  } 
-    to{ color: rgb(208, 255, 0); } 
-}
-img{
-    width: 400px;
-}
-.img1{ 
-    opacity: 0;
-    border-radius: 10; 
-    animation-name: foto1;
-    animation-duration: 2s;
-    animation-iteration-count: 1; 
-    animation-fill-mode: forwards; 
-    animation-delay: 2s; 
+header{
+    background:#021bff;
+    color:black;
+    text-align:center;
+    padding:20px;
+    font-size:32px;
+    font-weight:bold;
+    border-bottom:3px solid black;
 }
 
-@keyframes foto1{
-    from{ opacity: 0;}
-    to{ opacity: 1; }
-}
-.parrafo1{
-    animation-delay: 6s;
-    animation-name: parrafo1;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    color: rgba(0, 0, 0, 0);
-    animation-fill-mode: forwards;
-}
-@keyframes parrafo1{
-from{
-    margin-left: 100%;
-    color: rgba(0, 0, 0, 0);
-}
-to{
-    margin-left: 0%;
-    color: rgba(255, 255, 255, 255);
-}
+#menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    padding:30px;
 }
 
-img:hover{
-    transform: scale(1.1);
-    transition: 0.5s;
+.tarjeta{
+    background:rgba(255,255,255,.12);
+    border-radius:15px;
+    padding:20px;
+    color:black;
+    text-decoration:none;
+    transition:.4s;
+    box-sizing:border-box;
 }
 
-.img2{
-    opacity: 0;
-    border-radius: 10; 
-    animation-name: foto2;
-    animation-duration: 2s;
-    animation-iteration-count: 1; 
-    animation-fill-mode: forwards; 
-    animation-delay: 8s;
-}
-    
-@keyframes foto2{
-    from{opacity: 0;}
-    to{opacity: 1;}
-}
-.parrafo2{
-    animation-delay: 10s;
-    animation-name: parrafo1;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    color: rgba(0, 0, 0, 0);
-    animation-fill-mode: forwards;
+.tarjeta:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 100px rgb(0, 162, 255);
 }
 
-@keyframes parrafo2{
-from{
-    margin-left: 100%;
-    color: rgba(0, 0, 0, 0);
+.tarjeta h2{
+    margin-bottom:20px;
 }
-to{
-    margin-left: 0%;
-    color: rgba(255, 255, 255, 255);
+
+.tarjeta p{
+    font-size:20px;
 }
-}
+
 </style>
 </head>
-
 <body>
 
+<header>
+MIS PROYECTOS DE ANIMACIÓN WEB
+</header>
 
-<img src="img/sam1.jpg" class="img1">
+<div id="menu">
 
-<h1>SAMUEL HARRIS ALTMAN</h1>
+<a class="tarjeta" href="ANIMACION 1/ajedrez.html">
+    <h2> TABLERO DE AJEDREZ</h2>
+    <p>Proyecto 1</p>
+</a>
 
-<p class="parrafo1">
-Samuel Harris Altman (Chicago, Illinois; 22 de abril de 1985), conocido como Sam Altman, es un empresario, 
-inversionista, programador y bloguero estadounidense. Es director ejecutivo de OpenAI y expresidente de Y Combinator,
- y se le considera una de las figuras principales en el desarrollo de la inteligencia artificial
-</p>
+<a class="tarjeta" href="ANIMACION 2/seoane.html">
+    <h2> MANUEL SEOANE CORRALES</h2>
+    <p>Proyecto 2</p>
+</a>
 
-<img src="img/sam2.jpg" class="img2">
+<a class="tarjeta" href="ANIMACION 3/abeja.html">
+    <h2> BEE LA ABEJA</h2>
+    <p>Proyecto 3</p>
+</a>
 
-<p class="parrafo2">
-Altman creció en San Luis (Misuri), en una familia judía, como el mayor de cuatro hermanos.
- Su madre es dermatóloga y su padre era un agente inmobiliario. Recibió su primera computadora a la edad de ocho años.
- Asistió a la escuela secundaria John Burroughs y estudió Ciencias de la Computación en la Universidad de Stanford hasta que abandonó los estudios en 2005.
- En 2017, recibió un título honorario de la Universidad de Waterloo.
-También fue presidente de Y Combinator, donde ayudó a impulsar muchas startups tecnológicas.
-Actualmente es una figura importante en el mundo de la innovación y el desarrollo tecnológico.
-</p>
+<a class="tarjeta" href="ANIMACION 4/megaman.html">
+    <h2> MEGAMAN</h2>
+    <p>Proyecto 4</p>
+</a>
+
+<a class="tarjeta" href="ANIMACION 5/sam.html">
+    <h2> SAMUEL HARRIS ALTMAN</h2>
+    <p>Proyecto 5</p>
+</a>
+
+<a class="tarjeta" href="ANIMACION 6/turismo.html">
+    <h2> LUGARES TURISTICOS</h2>
+    <p>Proyecto 6</p>
+</a>
+
+<a class="tarjeta" href="ANIMACION 7/lenguajes.html">
+    <h2> PERSONAS CGI</h2>
+    <p>Proyecto 7</p>
+</a>
+
+<a class="tarjeta" href="Animacion Anuncio/coco.html">
+    <h2> ANUNCIO COCO</h2>
+    <p>Proyecto 8</p>
+</a>
+
+<a class="tarjeta" href="CLIPPATH/payaso.html">
+    <h2> FIGURA PAYASO</h2>
+    <p>Proyecto 9</p>
+</a>
+
+<a class="tarjeta" href="Gym Parallax/gym.html">
+    <h2> GYM PARALLAX</h2>
+    <p>Proyecto 10</p>
+</a>
+<a class="tarjeta" href="PARALLAX SVG/texto.html">
+    <h2> PARALLAX SVG</h2>
+    <p>Proyecto 11</p>
+</a>
+<a class="tarjeta" href="BLENDER/blender.html">
+    <h2>ANIMACION CON BLENDER</h2>
+    <p>Proyecto 12</p>
+</a>
+
+</div>
 
 </body>
 </html>
+```
