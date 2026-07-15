@@ -1,9 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mis Proyectos de Animación Web</title>
 
 <style>
@@ -12,124 +12,797 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:"Poppins","Segoe UI",sans-serif;
+}
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:linear-gradient(135deg,#001f4d,#003366,#0059b3);
+
+    color:#fff;
     min-height:100vh;
+    overflow-x:hidden;
+
+    background:
+    radial-gradient(circle at 15% 20%,rgba(0,174,255,.20),transparent 20%),
+    radial-gradient(circle at 85% 80%,rgba(0,81,255,.18),transparent 22%),
+    linear-gradient(135deg,#010b18,#04172d,#0b2e59,#103d78);
+
 }
+/*=====================================
+        FONDO TECNOLOGICO
+=====================================*/
+
+body::before{
+
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+    background-size:45px 45px;
+    opacity:.35;
+    animation:grid 35s linear infinite;
+    z-index:-2;
+}
+
+@keyframes grid{
+0%{
+
+    transform:rotate(0deg) scale(1);
+
+}
+
+100%{
+
+    transform:rotate(360deg) scale(1.15);
+
+}
+
+}
+
+/*=====================================
+        HEADER
+=====================================*/
 
 header{
-    background:#021bff;
-    color:black;
+
+    position:relative;
+    overflow:hidden;
+    padding:45px;
     text-align:center;
-    padding:20px;
-    font-size:32px;
-    font-weight:bold;
-    border-bottom:3px solid black;
+    background:
+    linear-gradient(90deg,
+    rgba(255,255,255,.05),
+    rgba(255,255,255,.10),
+    rgba(255,255,255,.05)
+
+);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+
+0 10px 40px rgba(0,0,0,.45);
+
 }
+header::before{
+
+content:"";
+
+position:absolute;
+
+width:320px;
+height:320px;
+
+border-radius:50%;
+
+left:-120px;
+top:-160px;
+
+background:#00bfff30;
+
+filter:blur(80px);
+
+}
+
+header::after{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+height:350px;
+
+border-radius:50%;
+
+right:-140px;
+bottom:-170px;
+
+background:#005eff30;
+
+filter:blur(80px);
+
+}
+
+
+header h1{
+
+position:relative;
+
+font-size:55px;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+margin-bottom:12px;
+
+text-shadow:
+
+0 0 25px rgba(0,183,255,.6);
+
+}
+
+header p{
+
+position:relative;
+
+font-size:18px;
+
+opacity:.85;
+
+margin-bottom:25px;
+
+}
+
+.datos{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+position:relative;
+
+}
+
+.datos span{
+
+padding:12px 20px;
+
+border-radius:50px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+backdrop-filter:blur(12px);
+
+font-size:14px;
+
+transition:.35s;
+
+}
+
+.datos span:hover{
+
+background:#00b7ff;
+
+transform:translateY(-4px);
+
+}
+
+
+/*=====================================
+        GRID
+=====================================*/
 
 #menu{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-    padding:30px;
+
+width:95%;
+
+margin:auto;
+
+padding:45px 0;
+
+display:grid;
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
 }
 
+/*=====================================
+        TARJETAS
+=====================================*/
+
 .tarjeta{
-    background:rgba(255,255,255,.12);
-    border-radius:15px;
-    padding:20px;
-    color:black;
-    text-decoration:none;
-    transition:.4s;
-    box-sizing:border-box;
+
+position:relative;
+
+overflow:hidden;
+
+text-decoration:none;
+
+color:white;
+
+border-radius:24px;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.12),
+
+rgba(255,255,255,.05)
+
+);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.10);
+
+transition:.45s;
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.35);
+
+}
+
+
+.tarjeta::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:60%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.30),
+
+transparent
+
+);
+
+transform:skewX(-25deg);
+
+transition:1s;
+
+}
+
+.tarjeta:hover::before{
+
+left:170%;
+
 }
 
 .tarjeta:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 100px rgb(0, 162, 255);
+
+transform:
+
+translateY(-12px)
+
+scale(1.03);
+
+box-shadow:
+
+0 20px 40px rgba(0,0,0,.5),
+
+0 0 55px rgb(0, 183, 255);
+
+border-color:#00c6ff;
+
 }
 
+/*=====================================
+        PREVIEW
+=====================================*/
+
+.preview{
+
+    position:relative;
+
+    width:100%;
+
+    height:175px;
+
+    overflow:hidden;
+
+    background:#16263d;
+
+}
+
+.preview img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.preview::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+    to top,
+    rgba(0,0,0,.55),
+    transparent);
+
+    opacity:0;
+
+    transition:.4s;
+
+    z-index:1;
+
+}
+
+.tarjeta:hover .preview::before{
+
+    opacity:1;
+
+}
+
+.tarjeta:hover img{
+
+    transform:scale(1.12);
+
+}
+
+/*==========================
+      INFORMACION
+==========================*/
+
+.info{
+
+    padding:18px;
+
+}
+    
 .tarjeta h2{
-    margin-bottom:20px;
+
+    font-size:28px;
+
+    margin:18px 18px 8px;
+
 }
 
 .tarjeta p{
-    font-size:20px;
+
+    margin:0 18px;
+
+    color:#dbe9ff;
+
+    font-size:16px;
+
+}
+
+/*==========================
+          BOTON
+==========================*/
+
+.boton{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin:20px;
+
+    padding:13px 28px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+    135deg,
+    #00c6ff,
+    #0072ff);
+
+    color:white;
+
+    font-weight:bold;
+
+    letter-spacing:.5px;
+
+    transition:.35s;
+
+}
+
+.boton::after{
+
+    content:"➜";
+
+    transition:.35s;
+
+}
+
+.tarjeta:hover .boton{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 20px rgba(0,191,255,.8);
+
+}
+
+.tarjeta:hover .boton::after{
+
+    transform:translateX(6px);
+
+}
+
+/*==========================
+          ICONOS
+==========================*/
+
+.icono{
+
+    font-size:50px;
+
+    margin:25px;
+
+}
+
+/*==========================
+         FOOTER
+==========================*/
+
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    opacity:.7;
+
+}
+
+/*==========================
+      RESPONSIVE
+==========================*/
+
+@media(max-width:700px){
+
+header h1{
+
+font-size:28px;
+
+}
+
+#menu{
+
+grid-template-columns:1fr;
+
+}
+
+.preview{
+
+height:180px;
+
+}
+
 }
 
 </style>
+
 </head>
+
 <body>
 
 <header>
-MIS PROYECTOS DE ANIMACIÓN WEB
+
+<h1>MIS PROYECTOS DE ANIMACIÓN WEB</h1>
+
+<p>Portafolio Profesional • HTML • CSS • JavaScript</p>
+
+<div class="datos">
+
+<span>💻 Fabio Hernández</span>
+
+<span>📂 12 Proyectos</span>
+
+<span>🎓 Computación e Informática</span>
+
+<span>🚀 Desarrollo Web</span>
+
+</div>
+
 </header>
 
 <div id="menu">
 
 <a class="tarjeta" href="ANIMACION1.html">
-    <h2> TABLERO DE AJEDREZ</h2>
-    <p>Proyecto 1</p>
+
+    <div class="preview">
+
+        <img src="img/ajedrez.gif">
+
+    </div>
+
+    <h2>PROYECTO 01</h2>
+
+    <p>Tablero de Ajedrez</p>
+
+    <span class="boton">
+
+        Ver Proyecto
+
+    </span>
+
 </a>
 
 <a class="tarjeta" href="ANIMACION2.html">
-    <h2> MANUEL SEOANE CORRALES</h2>
-    <p>Proyecto 2</p>
+
+    <div class="preview">
+
+        <img src="img/Manuel Seoane Corrales.png" alt="Seoane">
+
+    </div>
+
+    <h2>PROYECTO 02</h2>
+
+    <p>Manuel Seoane Corrales</p>
+
+    <span class="boton">
+
+        Ver Proyecto
+
+    </span>
+
 </a>
 
 <a class="tarjeta" href="ANIMACION3.html">
-    <h2> BEE LA ABEJA</h2>
-    <p>Proyecto 3</p>
+
+    <div class="preview">
+
+        <img src="img/abeja.gif" alt="Bee">
+
+    </div>
+
+    <h2>PROYECTO 03</h2>
+
+    <p>Bee la Abeja</p>
+
+    <span class="boton">
+
+        Ver Proyecto
+
+    </span>
+
 </a>
 
 <a class="tarjeta" href="ANIMACION4.html">
-    <h2> MEGAMAN</h2>
-    <p>Proyecto 4</p>
+
+    <div class="preview">
+
+        <img src="img/megaman.gif" alt="Megaman">
+
+    </div>
+
+    <h2>PROYECTO 04</h2>
+
+    <p>Megaman</p>
+
+    <span class="boton">
+
+        Ver Proyecto
+
+    </span>
+
 </a>
 
 <a class="tarjeta" href="ANIMACION5.html">
-    <h2> SAMUEL HARRIS ALTMAN</h2>
-    <p>Proyecto 5</p>
+
+    <div class="preview">
+
+        <img src="img/altman.gif" alt="Altman">
+
+    </div>
+
+    <h2>PROYECTO 05</h2>
+
+    <p>Samuel Harris Altman</p>
+
+    <span class="boton">
+
+        Ver Proyecto
+
+    </span>
+
 </a>
 
 <a class="tarjeta" href="ANIMACION6.html">
-    <h2> LUGARES TURISTICOS</h2>
-    <p>Proyecto 6</p>
+
+    <div class="preview">
+
+        <img src="img/turismo.gif" alt="Turismo">
+
+    </div>
+
+    <h2>PROYECTO 06</h2>
+
+    <p>Lugares Turísticos</p>
+
+    <span class="boton">
+
+        Ver Proyecto
+
+    </span>
+
 </a>
 
 <a class="tarjeta" href="ANIMACION7.html">
-    <h2> PERSONAS CGI</h2>
-    <p>Proyecto 7</p>
+
+    <div class="preview">
+
+        <img src="img/cgi.gif">
+
+    </div>
+
+    <h2>PROYECTO 07</h2>
+
+    <p>Personas CGI</p>
+
+    <span class="boton">
+
+        Ver Proyecto
+
+    </span>
+
 </a>
 
 <a class="tarjeta" href="ANIMACION8.html">
-    <h2> ANUNCIO COCO</h2>
-    <p>Proyecto 8</p>
-</a>
 
+    <div class="preview">
+
+        <img src="img/coco.gif" alt="Coco">
+
+    </div>
+
+    <h2>PROYECTO 08</h2>
+
+    <p>Anuncio Coco</p>
+
+    <span class="boton">
+
+        Ver Proyecto
+
+    </span>
+
+</a>
 <a class="tarjeta" href="ANIMACION9.html">
-    <h2> FIGURA PAYASO</h2>
-    <p>Proyecto 9</p>
+
+    <div class="preview">
+
+        <img src="img/payaso.gif" alt="Payaso">
+
+    </div>
+
+    <h2>PROYECTO 09</h2>
+
+    <p>Figura Payaso</p>
+
+    <span class="boton">
+
+        Ver Proyecto
+
+    </span>
+
 </a>
 
 <a class="tarjeta" href="ANIMACION10.html">
-    <h2> GYM PARALLAX</h2>
-    <p>Proyecto 10</p>
+
+    <div class="preview">
+
+        <img src="img/gym.gif" alt="Gym">
+
+    </div>
+
+    <h2>PROYECTO 10</h2>
+
+    <p>Gym Parallax</p>
+
+    <span class="boton">
+
+        Ver Proyecto
+
+    </span>
+
 </a>
+
 <a class="tarjeta" href="ANIMACION11.html">
-    <h2> PARALLAX SVG</h2>
-    <p>Proyecto 11</p>
+
+    <div class="preview">
+
+        <img src="img/svg.gif" alt="SVG">
+
+    </div>
+
+    <h2>PROYECTO 11</h2>
+
+    <p>Parallax SVG</p>
+
+    <span class="boton">
+
+        Ver Proyecto
+
+    </span>
+
 </a>
+
 <a class="tarjeta" href="ANIMACION12.html">
-    <h2>ANIMACION CON BLENDER</h2>
-    <p>Proyecto 12</p>
+
+    <div class="preview">
+
+        <img src="img/blender.gif" alt="Blender">
+
+    </div>
+
+    <h2>PROYECTO 12</h2>
+
+    <p>Animación con Blender</p>
+
+    <span class="boton">
+
+        Ver Proyecto
+
+    </span>
+
 </a>
 
 </div>
 
+<footer>
+
+12 proyectos disponibles
+
+</footer>
+
 </body>
 </html>
-```
